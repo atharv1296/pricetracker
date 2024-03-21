@@ -10,9 +10,10 @@ interface ProductData {
   des1: string;
   rating1: string;
   url1: string;
+  savedRuppees:string;
 }
 
-function MyComponent() {
+function DisplayComponent() {
   const [data, setData] = useState<ProductData | null>(null);
   const [searchPrompt, setSearchPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -104,9 +105,8 @@ function MyComponent() {
             <div className="text-center mt-4">
               <h2 className="text-xl font-semibold text-gray-800 dark:text-white">{data.title1}</h2>
               <p className="text-lg font-bold text-gray-900 dark:text-gray-200">Price: ₹ {data.price1}</p>
-              <div className="flex items-center mb-2">
-                {(data.rating1)}
-              </div>
+              <p className="text-lg font-bold text-gray-900 dark:text-gray-200">Saved Ruppes: ₹ {data.savedRuppees}</p>
+                <p className='text-center font-bold mb-4'>Rating: {(data.rating1)}</p>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">Description: {data.des1}</p>
               <button className="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg" onClick={handleBuyNowClick}>
                 Best Buying Link
@@ -119,4 +119,4 @@ function MyComponent() {
   );
 }
 
-export default MyComponent;
+export default DisplayComponent;

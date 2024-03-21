@@ -2,11 +2,19 @@
 // import "@/styles/globals.css";
 import "@/styles/webCSS.css";
 
+
 import type { AppProps } from "next/app";
 import Navbar from "./components/Navbar";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Head from "next/head";
-// Define the App component
+
+import {Poppins} from '@next/font/google'
+
+const poppins = Poppins({
+  subsets:['latin'],
+  weight:'300'
+})
+
 export default function App({ Component, pageProps }: AppProps) {
 
 
@@ -18,14 +26,16 @@ export default function App({ Component, pageProps }: AppProps) {
     <title>Price Tracker</title>
     <meta name="description" content="Track prices effortlessly, save money smartly, with real-time notifications " />
   </Head>
-    <div>
-      <Navbar/> {/* Include the NavBar component */}
-      <Component {...pageProps} /> {/* Render the page content */}
+  <main className={poppins.className}>
+  <div>
+      <Navbar/> 
+      <Component {...pageProps} /> 
 
-      {/* <div className="mt-72">
-      <Footer/>
-      </div> */}
+       
     </div>
+
+  </main>
+    
   </>
     
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import fetchData from "./diplayCategoryProductResult"; // Assuming this function fetches data from an API
-import Footer from "../footer";
+import Footer from "../Footer";
 import LoadingAnimation from '../../../../public/assets/loading-2.json'; 
 import Lottie from "lottie-react";
 // import CustomLayout from "../CustomLayout";
@@ -20,6 +20,7 @@ interface ProductData {
     rating2: string;
     url1: string;
     url2: string;
+    savedRuppes:string;
   }
   
 function DisplayProduct() {
@@ -55,7 +56,7 @@ function DisplayProduct() {
     {/* <CustomLayout> */}
     
   
-      <div style={{marginTop:'200px'}}>
+      <div style={{marginTop:'150px'}} className="ml-20 mr-20 mb-10">
       {/* Render fetched product data */}
       {!loading && productData && (
         <div className="max-w-full mx-auto p-6 border rounded-lg shadow-md flex bg-white dark:bg-gray-800 font-roboto">
@@ -65,7 +66,10 @@ function DisplayProduct() {
       <div className="flex flex-col justify-between w-full">
         <div>
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-2">{productData.title1}</h2>
+          <p className="text-xl font-bold text-gray-900 dark:text-gray-200 ">Rating: {productData.rating1}</p>
           <p className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-4">₹ {productData.price1}</p>
+          <p className="text-xl font-bold text-gray-900 dark:text-gray-200 mb-4">₹ {productData.savedRuppes}</p>
+
           <div className="flex items-center mb-2">
             {/* {renderRatingStars(product.rating)} */}
           </div>

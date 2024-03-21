@@ -8,6 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         const data = await scrapeAndStoreProduct(productUrl);
         const allData = {
             title1: data?.f_scrapData.title,
+            savedRupees: data?.s_scrapData.price - data?.f_scrapData.price,
             price1: data?.f_scrapData.price,
             image1: data?.f_scrapData.image,
             des1: data?.f_scrapData.des,
@@ -20,7 +21,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             rating2: data?.s_scrapData.rating,
             url2: data?.s_scrapData.url
         }
-
+        console.log(`HI SAVED RUPEE : ${allData.savedRupees}`);
         res.status(200).json({ allData });
     } catch (error) {
         console.error('Error running Puppeteer script:', error);

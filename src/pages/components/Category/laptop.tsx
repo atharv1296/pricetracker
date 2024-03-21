@@ -17,7 +17,6 @@ function Laptop() {
         "Apple 2022 MacBook Air Laptop with M2 chip: 34.46 cm (13.6-inch) Liquid Retina Display, 8GB RAM, 256GB SSD Storage, Backlit Keyboard, 1080p FaceTime HD Camera. Works with iPhone/iPad; Space Grey",
         "Dell Inspiron 7430 14 FHD + (1920x1200) IPS Touch 2 -in -1 Laptop | Intel i7 - 1355U 10 - Core | Iris Xe Graphics | Backlit Keyboard | Fingerprint | Thunderbolt 4 | WiFi 6E | 16GB LPDDR5 1TB SSD | Win10",
         "Lenovo IdeaPad Gaming 3 AMD Ryzen 5 5500H 15.6 (39.62cm) FHD IPS 300nits 144Hz Gaming Laptop (8GB/512GB SSD/Windows 11/NVIDIA RTX 2050 4GB/Alexa/3 Month Game Pass/Onyx Grey/2.32Kg), 82K20289IN",
-        "Lenovo Legion 5 Pro AMD Ryzen 7 5800H40cm 500Nits QHD Gaming Laptop(16GB/1TB SSD/RTX 3060 6GB GDDR6 Graphics/165Hz/Windows 11/Office 2021/RGB Backlit/3mnth Xbox Game Pass/Storm Grey/2.45Kg)82JQ00JCIN    "
 
     ];
 
@@ -38,13 +37,12 @@ function Laptop() {
         "/assets/cateorgyWisePhoto/laptop/l13.png",
         "/assets/cateorgyWisePhoto/laptop/l14.png",
         "/assets/cateorgyWisePhoto/laptop/l15.png",
-        "/assets/cateorgyWisePhoto/laptop/l16.png",
     ];
 
     const ratings: any = [
         4.5, 3.2, 4.8, 2.9, 5.0,
         4.1, 3.7, 4.5, 2.8, 4.6,
-        3.9, 4.2, 4.7, 3.5, 4.9
+        3.9, 4.2, 4.7, 3.5
       ];
       
 
@@ -57,7 +55,7 @@ function Laptop() {
 
     return (
     <>  
-       <div className="flex flex-wrap m-0 h-38 p-0">
+       <div className="flex flex-wrap justify-center m-0 h-38 p-0">
             {titles.map((title, index) => (
               <div key={index} className="max-w-sm rounded overflow-hidden shadow-lg m-4 cursor-pointer" onClick={() => handleDivClick(title, prices[index], images[index])}>
                 <div className="img h-38 flex justify-center items-center">

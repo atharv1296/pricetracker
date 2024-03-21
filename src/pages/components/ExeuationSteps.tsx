@@ -12,7 +12,7 @@ const PriceTrackerAccessSteps: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <Step number={1} title="Visit Our Website" description="Go to [PriceTraker.com]" />
           <Step number={2} title="Input Product Information" description="Enter the link or name of the product." />
-          <Step number={3} title="Click 'Submit'" description="Hit the submit button to see the comparison results instantly" />
+          <Step number={3} title="Click 'Submit'" description="Hit 'Submit' to get results instantly" />
         </div>
       </div>
     </section>

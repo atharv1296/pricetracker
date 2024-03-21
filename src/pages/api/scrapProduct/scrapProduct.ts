@@ -1,7 +1,7 @@
+"use server"
 import puppeteer from "puppeteer";
 import f_scrap from "./scrap";
 import compareProduct from "./compareProduct"
-import { browser } from "process";
 
 
 // product title selector

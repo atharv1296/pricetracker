@@ -1,4 +1,4 @@
-
+"use server"
 async function f_scrap(page: any, url: any, titleSelector: any, priceSelector: any, imageSelector: any, descSelector: any, ratingSelector: any) {
     try {
         //  await page.goto(`https://www.google.com/search?q=${url}`);

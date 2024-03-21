@@ -1,3 +1,4 @@
+"use server"
 import identifyEcommercePlatform from "./identifyEcommercePlatform";
 import scrapProduct from "./scrapProduct";
 

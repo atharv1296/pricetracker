@@ -2,11 +2,20 @@ import React from 'react'
 import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import { useRouter } from 'next/router'
 // import '@/styles/globals.css';
 
 
 
 const Slider_Products = () => {
+
+    const router = useRouter();
+
+    
+    const handleDivClick = (title: any) => {
+        // Navigate to the second page with the title, price, and image query parameters
+        router.push(`/components/Category/displayPage?title=${encodeURIComponent(title)}`);
+      };
 
 
     const data = [
@@ -89,25 +98,25 @@ const Slider_Products = () => {
     
   return (
     
-    <div className='w-3/4 m-auto p-2 '>
+    <div className='w-4/5 m-auto p-2 '>
     <h2 id="qualities" className="text-4xl font-bold text-white text-center p-4">Trending Now</h2>
 
         <div className='m-2 p-2'>
-        <Slider {...settings} >
-            {data.map((d)=>(
-                <div className='bg-yellow-400 400 h-[370px] text-black rounded-xl border-4 border-slate-600'>
-                <div className='rounded-t-xl h-60 bg-white flex justify-center items-center'>
-                  <img src={d.image} alt="" className='h-52  rounded-xl' />
-                </div>
-                <div className='flex flex-col justify-center items-center gap-4  p-4 pb-0 '>
-                <p className='text-lg font-semibold' style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', maxWidth: '300px' }}>{d.title}</p>
-                  <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 ">Check Offer</button>
+        <Slider {...settings}>
+  {data.map((d, index) => (
+    <div key={index} className='bg-yellow-400 h-[370px] text-black rounded-xl border-4 border-slate-700'>
+      <div className='rounded-t-xl h-60 bg-white flex justify-center items-center'>
+        <img src={d.image} alt={d.title} className='h-52 rounded-xl' />
+      </div>
+      <div className='flex flex-col justify-center items-center gap-4 p-4 pb-0'>
+        <p className='text-lg font-semibold overflow-hidden text-ellipsis whitespace-nowrap max-w-[300px]'>{d.title}</p>
+        <button type="button" className="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 " 
+onClick={() => handleDivClick(d.title)}>Check Offer</button>
+      </div>
+    </div>
+  ))}
+</Slider>
 
-                </div>
-              </div>
-              
-            ))}
-                </Slider>
 
         </div>
 

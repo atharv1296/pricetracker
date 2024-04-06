@@ -42,7 +42,12 @@ async function scrapProduct(url: any, ecommercePlatform: any) {
         let f_scrapData, s_scrapData;
         const browser = await puppeteer.launch({ headless: false });
         const page = await browser.newPage();
+        const platform1 = "Amazoan";
+        const platform2 = "Flipkart";
 
+
+
+<<<<<<< HEAD
 
 
         if (ecommercePlatform == "amazoan") {
@@ -59,13 +64,33 @@ async function scrapProduct(url: any, ecommercePlatform: any) {
         else if (ecommercePlatform == "flipkart") {
             await page.goto(url);
             s_scrapData = await f_scrap(page, url, flipkartTitleSelector, flipkartPriceSelector, flipkartImageSelector, flipkartDescriptionSelector, flipkartRatingSelector);
+=======
+        if (ecommercePlatform == "amazoan") {
+            await page.goto(`https://www.google.com/search?q=${url}`);
+            const productUrlVal = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
+            await page.goto(productUrlVal);
+            f_scrapData = await f_scrap(page, productUrlVal, platform1, amazonTitleSelector, amazonPriceSelector, amazonImageSelector, amazoanDescriptionSelector, amazoanRatingSelector);
+
+            await page.goto(`https://www.google.com/search?q=${flipkartSearchLink}${f_scrapData?.title}`);
+            const productUrl = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
+            await page.goto(productUrl);
+            s_scrapData = await f_scrap(page, productUrl, platform2, flipkartTitleSelector, flipkartPriceSelector, flipkartImageSelector, flipkartDescriptionSelector, flipkartRatingSelector);
+        }
+        else if (ecommercePlatform == "flipkart") {
+            await page.goto(url);
+            s_scrapData = await f_scrap(page, url, platform2, flipkartTitleSelector, flipkartPriceSelector, flipkartImageSelector, flipkartDescriptionSelector, flipkartRatingSelector);
+>>>>>>> 8d71198 (6-04)
 
 
             await page.goto(`https://www.google.com/search?q=${amazoanSearchLink}${s_scrapData?.title}`);
             const productUrlVal = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
             await page.goto(productUrlVal);
             console.log(productUrlVal);
+<<<<<<< HEAD
             f_scrapData = await f_scrap(page, productUrlVal, amazonTitleSelector, amazonPriceSelector, amazonImageSelector, amazoanDescriptionSelector, amazoanRatingSelector);
+=======
+            f_scrapData = await f_scrap(page, productUrlVal, platform1, amazonTitleSelector, amazonPriceSelector, amazonImageSelector, amazoanDescriptionSelector, amazoanRatingSelector);
+>>>>>>> 8d71198 (6-04)
 
         }
         else {
@@ -74,12 +99,17 @@ async function scrapProduct(url: any, ecommercePlatform: any) {
             const productUrlVal = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
             console.log(productUrlVal);
             await page.goto(productUrlVal);
+<<<<<<< HEAD
             f_scrapData = await f_scrap(page, productUrlVal, amazonTitleSelector, amazonPriceSelector, amazonImageSelector, amazoanDescriptionSelector, amazoanRatingSelector);
+=======
+            f_scrapData = await f_scrap(page, productUrlVal, platform1, amazonTitleSelector, amazonPriceSelector, amazonImageSelector, amazoanDescriptionSelector, amazoanRatingSelector);
+>>>>>>> 8d71198 (6-04)
 
             // scrap from flipkart platform through title provided by the upper statements
             await page.goto(`https://www.google.com/search?q=${flipkartSearchLink}${url}`);
             const productUrl = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
             await page.goto(productUrl);
+<<<<<<< HEAD
             s_scrapData = await f_scrap(page, productUrl, flipkartTitleSelector, flipkartPriceSelector, flipkartImageSelector, flipkartDescriptionSelector, flipkartRatingSelector);
        }
         let comparedDetails = await compareProduct(f_scrapData, s_scrapData);
@@ -87,6 +117,14 @@ async function scrapProduct(url: any, ecommercePlatform: any) {
         return (comparedDetails);
 
 
+=======
+            s_scrapData = await f_scrap(page, productUrl, platform2, flipkartTitleSelector, flipkartPriceSelector, flipkartImageSelector, flipkartDescriptionSelector, flipkartRatingSelector);
+        }
+        
+        let comparedDetails = await compareProduct(f_scrapData, s_scrapData);
+        browser.close();
+        return (comparedDetails);
+>>>>>>> 8d71198 (6-04)
     } catch (error) { }
 }
 

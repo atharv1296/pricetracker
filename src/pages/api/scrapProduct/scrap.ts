@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 "use server"
 async function f_scrap(page: any, url: any, titleSelector: any, priceSelector: any, imageSelector: any, descSelector: any, ratingSelector: any) {
+=======
+
+async function f_scrap(page: any, url: any, platform:any,titleSelector: any, priceSelector: any, imageSelector: any, descSelector: any, ratingSelector: any) {
+>>>>>>> 8d71198 (6-04)
     try {
         //  await page.goto(`https://www.google.com/search?q=${url}`);
         //  const productUrlVal = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
@@ -39,8 +44,24 @@ async function f_scrap(page: any, url: any, titleSelector: any, priceSelector: a
 
                 , ratingElement);
         }
+<<<<<<< HEAD
         console.log({ title, price, image, des, rating, url });
         return ({ title, price, image, des, rating, url });
+=======
+
+        
+        if(platform == "amazoan"){
+            const bankElement = await page.$('#itembox-InstantBankDiscount.span.a-truncate-cut');
+            let bankOffer = null;
+            if(bankElement){
+                bankOffer =  await page.evaluate((element:any)=>element.textContent.trim(),bankElement);
+                console.log(bankOffer);
+                const bankElement2 = await page.$("")
+            }
+        }
+        console.log({ title, price, image, des, rating, url });
+        return ({ title, price, image, des, rating, url,platform });
+>>>>>>> 8d71198 (6-04)
     }
     catch (error) {
         console.error(`Product couldn't scrap ${error}`);

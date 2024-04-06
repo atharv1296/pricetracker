@@ -1,4 +1,3 @@
-
 async function compareProduct(f_scrapData:any,s_scrapData:any) {
     if (parseInt(f_scrapData?.price) < parseInt(s_scrapData?.price)) {
         return ({ f_scrapData, s_scrapData });
@@ -20,5 +19,6 @@ async function compareProduct(f_scrapData:any,s_scrapData:any) {
             return ({ f_scrapData, s_scrapData });
         }
     }
+    
 }
 export default compareProduct;

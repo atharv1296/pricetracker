@@ -19,7 +19,7 @@ const Home = () => {
 
   return (
     <>
-    <Head>
+      <Head>
         <title>Price Tracker</title>
         <meta name="description" content="Track prices effortlessly, save money smartly, with real-time notifications " />
       </Head>
@@ -39,7 +39,7 @@ const Home = () => {
                 </span>
               </span> shop smarter!
             </h1>
-            <p className="text-16xl lg:text-3xl text-lg sm:text-sm  rad-text-shadow pt-4 md:pt-12 font-display font-bold italic leading-none xl:text-3xl 2xl:text-4xl text drop-shadow-[2px_2px_var(--tw-shadow-color)] ">
+            <p className="text-16xl lg:text-3xl text-lg sm:text-sm  rad-text-shadow  md:pt-12 font-display font-bold italic leading-none xl:text-3xl 2xl:text-4xl text drop-shadow-[2px_2px_var(--tw-shadow-color)] ">
               {/* hello */}
             </p>
             <div className="w-80 h-80 items-center m-[-42px]"> 
@@ -49,6 +49,8 @@ const Home = () => {
         
           </div>
         </div>
+
+
       </section>
 
 
@@ -72,9 +74,8 @@ const Home = () => {
           <HeroCarouselFull />
         </div>
       </section>
-
       <footer>
-        <Footer/>
+        <Footer />
       </footer>
 
       <ScrollToTopButton/>

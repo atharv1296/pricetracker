@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+ 
 "use server"
 async function f_scrap(page: any, url: any, titleSelector: any, priceSelector: any, imageSelector: any, descSelector: any, ratingSelector: any) {
-=======
+ 
 
 async function f_scrap(page: any, url: any, platform:any,titleSelector: any, priceSelector: any, imageSelector: any, descSelector: any, ratingSelector: any) {
->>>>>>> 8d71198 (6-04)
+  
     try {
         //  await page.goto(`https://www.google.com/search?q=${url}`);
         //  const productUrlVal = await page.$eval("a[jsname=UWckNb]", (element: any) => element.href);
@@ -44,10 +44,10 @@ async function f_scrap(page: any, url: any, platform:any,titleSelector: any, pri
 
                 , ratingElement);
         }
-<<<<<<< HEAD
+ 
         console.log({ title, price, image, des, rating, url });
         return ({ title, price, image, des, rating, url });
-=======
+ 
 
         
         if(platform == "amazoan"){
@@ -61,7 +61,7 @@ async function f_scrap(page: any, url: any, platform:any,titleSelector: any, pri
         }
         console.log({ title, price, image, des, rating, url });
         return ({ title, price, image, des, rating, url,platform });
->>>>>>> 8d71198 (6-04)
+  
     }
     catch (error) {
         console.error(`Product couldn't scrap ${error}`);

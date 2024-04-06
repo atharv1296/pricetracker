@@ -2,27 +2,27 @@ import React, { useState } from 'react';
 import Lottie from 'lottie-react';
 import animationData from '../../../public/assets/loading blue.json';
 import { MdClose } from 'react-icons/md';
-<<<<<<< HEAD
+ 
 
 interface ProductData {
-=======
+ 
 import { useRouter } from "next/router";
 
 interface Data {
->>>>>>> 8d71198 (6-04)
+  
   title1: string;
   price1: string;
   image1: string;
   des1: string;
   rating1: string;
-<<<<<<< HEAD
+ 
   url1: string;
   savedRuppees:string;
 }
 
 function DisplayComponent() {
   const [data, setData] = useState<ProductData | null>(null);
-=======
+ 
   title2: string;
   price2: string;
   image2: string;
@@ -39,17 +39,17 @@ function DisplayComponent() {
 
 function DisplayComponent() {
   const [data, setData] = useState<Data | null>(null);
->>>>>>> 8d71198 (6-04)
+  
   const [searchPrompt, setSearchPrompt] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [showLoadingAnimation, setShowLoadingAnimation] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [showDialog, setShowDialog] = useState(false);
-<<<<<<< HEAD
-=======
+ 
+ 
   const [expanded, setExpanded] = useState(false); // State for description expansion
   const router = useRouter();
->>>>>>> 8d71198 (6-04)
+  
 
   const handleBuyNowClick = () => {
     window.open(data?.url1, '_blank');
@@ -59,15 +59,15 @@ function DisplayComponent() {
     try {
       setIsLoading(true);
       setShowLoadingAnimation(true);
-<<<<<<< HEAD
+ 
       
       const response = await fetch(`/api/scrapProduct/displayRequest?url=${searchPrompt}`);
       const jsonData = await response.json();
       
-=======
+ 
       const response = await fetch(`/api/scrapProduct/displayRequest?url=${searchPrompt}`);
       const jsonData = await response.json();
->>>>>>> 8d71198 (6-04)
+  
       setData(jsonData.allData);
       setSearchPrompt('');
       setError(null);
@@ -81,8 +81,8 @@ function DisplayComponent() {
     }
   };
 
-<<<<<<< HEAD
-=======
+ 
+ 
   const handleBuyNowClickFirstPlatform = () => {
     window.open(data?.url1, '_blank');
   };
@@ -95,7 +95,7 @@ function DisplayComponent() {
     setExpanded(!expanded);
   };
 
->>>>>>> 8d71198 (6-04)
+  
   return (
     <>
       <form
@@ -103,20 +103,20 @@ function DisplayComponent() {
           e.preventDefault();
           fetchData(searchPrompt);
         }}
-<<<<<<< HEAD
+ 
         className="flex flex-wrap items-center justify-center"
-=======
+ 
         className="flex flex-wrap items-center justify-center drop-shadow-2xl"
->>>>>>> 8d71198 (6-04)
+  
         style={{
           marginTop: '20px',
           width: '400px', // Set a specific width
         }}
       >
-<<<<<<< HEAD
-=======
+ 
+ 
         {/* Search bar */}
->>>>>>> 8d71198 (6-04)
+  
         <input
           type="text"
           value={searchPrompt}
@@ -124,11 +124,11 @@ function DisplayComponent() {
           placeholder="Enter product link"
           className="searchbar-input focus:outline-none px-4 py-2 inline w-full rounded-md border border-gray-300 bg-white py-2 pl-3 pr-3 leading-5 placeholder-gray-500 focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-indigo-500 sm:text-sm"
         />
-<<<<<<< HEAD
+ 
         
-=======
+ 
 
->>>>>>> 8d71198 (6-04)
+  
         <button
           type="submit"
           className="searchbar-btn focus:outline-none text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 ml-2 dark:focus:ring-yellow-900"
@@ -136,7 +136,7 @@ function DisplayComponent() {
         >
           {isLoading ? 'Searching...' : 'Search'}
         </button>
-<<<<<<< HEAD
+ 
         
         {searchPrompt && (
           <button type="button" name="Search" onClick={() => setSearchPrompt('')} className="ml-2">
@@ -144,7 +144,7 @@ function DisplayComponent() {
           </button>
         )}
         
-=======
+ 
 
         {searchPrompt && (
           <button type="button" name="Search" onClick={() => setSearchPrompt('')} className="ml-2">
@@ -152,14 +152,14 @@ function DisplayComponent() {
           </button>
         )}
 
->>>>>>> 8d71198 (6-04)
+  
         {showLoadingAnimation && (
           <div className="w-40 h-40 m-[-32px]">
             <Lottie animationData={animationData} width={40} height={40} />
           </div>
         )}
       </form>
-<<<<<<< HEAD
+ 
         
       {error && <div>Error: {error}</div>}
       
@@ -187,7 +187,7 @@ function DisplayComponent() {
             </div>
           </div>
         </div>
-=======
+ 
 
       {error && <div>Error: {error}</div>}
 
@@ -263,7 +263,7 @@ function DisplayComponent() {
             </div>
           </div>
         </div >
->>>>>>> 8d71198 (6-04)
+  
       )}
     </>
   );

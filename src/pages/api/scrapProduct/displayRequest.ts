@@ -32,10 +32,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             image2: data?.s_scrapData.image,
             des2: data?.s_scrapData.des,
             rating2: data?.s_scrapData.rating,
-<<<<<<< HEAD
+ 
             url2: data?.s_scrapData.url
         }
-=======
+ 
             url2: data?.s_scrapData.url,
             platform1logo: p1,
             platform2logo: p2,
@@ -44,7 +44,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
             
         };
 
->>>>>>> 8d71198 (6-04)
+  
         console.log(`HI SAVED RUPEE : ${allData.savedRupees}`);
         res.status(200).json({ allData });
     } catch (error) {

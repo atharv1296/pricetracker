@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@next/font": "^14.1.4",
-<<<<<<< HEAD
+ 
     "cross-spawn": "^7.0.3",
-=======
->>>>>>> 8d71198 (6-04)
+ 
+  
     "lottie-react": "^2.4.0",
     "next": "14.1.1",
     "puppeteer": "^22.3.0",
@@ -27,13 +27,13 @@
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
+ 
     "@babel/plugin-transform-class-properties": "^7.24.1",
     "@babel/plugin-transform-nullish-coalescing-operator": "^7.24.1",
     "@babel/plugin-transform-optional-chaining": "^7.24.1",
-=======
+ 
     "@types/cheerio": "^0.22.35",
->>>>>>> 8d71198 (6-04)
+  
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
